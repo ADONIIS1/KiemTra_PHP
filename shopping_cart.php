@@ -38,7 +38,20 @@
         }
         header("location: shopping_cart.php");
     }
-?>
+
+
+    function remove_cart_data() {
+        unset($_SESSION['cart_items']);
+    }
+    
+    // Check if the button has been clicked
+    if(isset($_POST['remove_cart_button'])) {
+        remove_cart_data();
+        header("location: list_product.php");
+    }
+    
+    ?>
+
 
 <div class="container text-center">
     <div class="col-sm-3">
@@ -94,15 +107,18 @@
                             <tr>
                                 <td colspan=3>
                                     <p class='text-right'>
-                                        <button type='button' onclick="location.href= '/list_product.php'" class='btn btn-primary'> Tiếp tục mua hàng</button>
+                                        <button style="margin-top: 10px;" type='button' onclick="location.href= '/list_product.php'" class='btn btn-primary'> Tiếp tục mua hàng</button>
                                     </p>
                                 </td>
                                 <td colspan=2>
                                     <p class='text-right'>
-                                        <button type="button" class='btn btn-success'>Thanh toán</button>
+                                    <form method="post">
+                                        <button type="submit" name="remove_cart_button" class='btn btn-success'>Thanh toán</button>
+                                    </form>
+
                                     </p>
                                 </td>
-                            </tr>";
+                            </tr>
                 <?php
                 }
                 else{

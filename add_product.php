@@ -47,7 +47,7 @@ if(isset($_POST["btnsubmit"])) {
         </div>
 
         <div class="lblinput">
-            <input type="text" name="txtName" value="<?php echo isset($_POST["txtName"]) ? $_POST["txtName"] : ""; ?>">
+            <input type="text" required name="txtName" value="<?php echo isset($_POST["txtName"]) ? $_POST["txtName"] : ""; ?>">
         </div>
 
     </div>
@@ -61,7 +61,7 @@ if(isset($_POST["btnsubmit"])) {
         </div>
 
         <div class="lblinput">
-            <textarea name="txtdesc" cols="21" rows="10"
+            <textarea name="txtdesc" required cols="30" rows="5"
                 value="<?php echo isset($_POST["txtdesc"]) ? $_POST["txtdesc"] : ""; ?>"></textarea>
         </div>
     </div>
@@ -74,7 +74,7 @@ if(isset($_POST["btnsubmit"])) {
         </div>
 
         <div class="lblinput">
-             <input type="text" name="txtquantity" value="<?php echo isset($_POST["txtquantity"]) ? $_POST["txtquantity"] : ""; ?>">
+             <input type="text"  required name="txtquantity" value="<?php echo isset($_POST["txtquantity"]) ? $_POST["txtquantity"] : ""; ?>">
         </div>
     </div> 
     </br>
@@ -86,7 +86,7 @@ if(isset($_POST["btnsubmit"])) {
         </div>
 
         <div class="lblinput">
-        <input type="text" name="txtprice" value="<?php echo isset($_POST["txtprice"]) ? $_POST["txtprice"] : ""; ?>">
+        <input type="text" name="txtprice" required value="<?php echo isset($_POST["txtprice"]) ? $_POST["txtprice"] : ""; ?>">
         </div>
     </div> 
     </br>
@@ -98,7 +98,7 @@ if(isset($_POST["btnsubmit"])) {
         </div>
 
         <div class="lblinput">
-            <select class="form-control" name="txtCateID" style="width:300px">
+            <select class="form-control" name="txtCateID" required style="width:300px">
                 <option value=""  selected>-- Chọn Loại --</option>
                 <?php
                     $cates = Category::list_category();
@@ -118,7 +118,7 @@ if(isset($_POST["btnsubmit"])) {
         </div>
 
         <div class="lblinput">
-        <input type="file" name="txtpic" accept=".PNG,.GIF,.JPG" value="<?php echo isset($_POST["txtpic"]) ? $_POST["txtpic"] : ""; ?>">
+        <input type="file" required name="txtpic" accept=".PNG,.GIF,.JPG" value="<?php echo isset($_POST["txtpic"]) ? $_POST["txtpic"] : ""; ?>">
         </div>
     </div>
         
