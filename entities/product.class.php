@@ -59,4 +59,19 @@ class Product{
         $result = $db->select_to_array($sql);
         return $result;
     }
+
+    public static function list_product_relate($cateid,$id){
+        $db = new Db();
+        $sql = "SELECT * FROM product where cateID = '$cateid' AND productID != '$id'";
+        $result = $db->select_to_array($sql);
+        return $result;
+    }
+    public static function get_product($id){
+        $db = new Db();
+        $sql = "SELECT * FROM product where  productID = '$id'";
+        $result = $db->select_to_array($sql);
+        return $result;
+    }
+
 }
+?>
